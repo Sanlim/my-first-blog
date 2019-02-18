@@ -3,22 +3,16 @@
 		<title>Sanlim Blog</title>
     </head>
     
-	<body>
-		<div>
-			<h1><a	href="/">Sanlim Blog</a></h1>
-		</div>
-        
+	<body>   
         <div>
-			<p>published: 18 Feb 2019</p>
-				<h2><a	href="">My	first	post</a></h2>
-					<p>My name is Sanlim Nisoy. I study at Faculty of Engineering in Prince of Songkla
-                        University</p>
-		</div>
-        
-        <div>
-			<p>published: 18 Feb 2019</p>
-	        <h2><a	href="">My	second	post</a></h2>
-			<p>I am very glad to introduce for you. Thank you for visitting.</p>
+				<h1><a	href="/">Sanlim	Blog</a></h1>
         </div>
+            {%	for	post	in	posts	%}
+				<div>
+					<p>published:	{{	post.published_date	}}</p>
+				    <h2><a	href="">{{	post.title	}}</a></h2>
+					<p>{{ post.text|linebreaksbr }}</p>
+				</div>
+            {%	endfor	%}      
 	</body>
 </html>
